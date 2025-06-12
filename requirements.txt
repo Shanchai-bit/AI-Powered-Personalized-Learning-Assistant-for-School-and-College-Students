@@ -1,18 +1,73 @@
-1. https://drive.google.com/drive/folders/0B8VPP_XVUjoaaGhvOV9rVERrY0E?resourcekey=0-L4-rsmCvBht-Sp_kQzjbiQ
+# Suppress Warnings
+import warnings
+warnings.filterwarnings("ignore")
 
-https://www.kaggle.com/code/nandaprasetia/automated-essay-scoring-lstm-classification
-
-import pandas as pd
+# Standard Libraries
 import os
+import sys
+import re
+import string
+from datetime import datetime, timedelta
+
+# Data Handling
+import numpy as np
+import pandas as pd
+
+# Visualization
 import matplotlib.pyplot as plt
 import seaborn as sns
-import warnings
 import missingno as msno
-import string
+
+# NLP Libraries
 import nltk
 from nltk.corpus import stopwords
-import re
-from nltk.stem.porter import PorterStemmer
 from nltk.tokenize import word_tokenize
+from nltk.stem.porter import PorterStemmer
 from sklearn.feature_extraction.text import TfidfVectorizer
-import pickle
+
+# TensorFlow/Keras
+import tensorflow as tf
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Embedding, LSTM, Dense, Dropout
+
+# Sklearn - Preprocessing & Evaluation
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
+from sklearn.metrics import silhouette_score
+
+# Sklearn - Regression
+from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+from sklearn.svm import SVR
+
+# Sklearn - Classification
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+
+# ML Utilities
+from scipy.stats.mstats import winsorize
+from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
+
+# XGBoost
+import xgboost as xgb
+
+# Transformers
+from transformers import pipeline
+
+# Streamlit
+import streamlit as st
+from PIL import Image
+
+# Custom Modules (adjust paths accordingly)
+sys.path.append(os.path.abspath(r'D:\Guvi_Project\Personalized Learning Assistant\src'))
+from Data_Preprocessing import tokenization
+from feature_engineering import normalisation, oversampling
+from Model_Training import classification, pickle_dump, pickle_load
+from summary_generator import summarize_text
