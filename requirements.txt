@@ -1,0 +1,18 @@
+1. https://drive.google.com/drive/folders/0B8VPP_XVUjoaaGhvOV9rVERrY0E?resourcekey=0-L4-rsmCvBht-Sp_kQzjbiQ
+
+https://www.kaggle.com/code/nandaprasetia/automated-essay-scoring-lstm-classification
+
+import pandas as pd
+import os
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+import missingno as msno
+import string
+import nltk
+from nltk.corpus import stopwords
+import re
+from nltk.stem.porter import PorterStemmer
+from nltk.tokenize import word_tokenize
+from sklearn.feature_extraction.text import TfidfVectorizer
+import pickle
